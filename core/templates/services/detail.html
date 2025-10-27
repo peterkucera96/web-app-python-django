@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Detail majiteľa</h2>
+<p><strong>Meno:</strong> {{ owner.jmeno }} {{ owner.prijmeni }}</p>
+<p><strong>Adresa:</strong> {{ owner.adresa }}</p>
+<p><strong>Telefón:</strong> {{ owner.telefon }}</p>
+<p><strong>Email:</strong> {{ owner.email }}</p>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Zoznam servisov</h2>
+<ul class="list-group">
+    {% for service in services %}
+        <li class="list-group-item">
+            {{ service.car.spz }} – {{ service.technician }} – {{ service.datum_servisu }} – {{ service.total_price }} €
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_service' %}" class="btn btn-success mt-3">Pridať servis</a>
+{% endblock %}

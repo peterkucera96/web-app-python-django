@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Záznamy o servisoch</h2>
+<ul class="list-group">
+    {% for record in records %}
+        <li class="list-group-item">
+            Auto: {{ record.car.spz }} | Dátum: {{ record.datum_servisu }} | Typ: {{ record.typ_servisu }} | Cena: {{ record.cena }} €
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

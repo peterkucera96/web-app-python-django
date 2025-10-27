@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Zoznam áut</h2>
+
+{% for car in cars %}
+    <div class="card mb-2">
+        <div class="card-body">
+            <p>{{ car.znacka }} {{ car.model }} ({{ car.spz }}) – VIN: {{ car.vin }}</p>
+            <p>Rok výroby: {{ car.rok_vyroby }}, Majiteľ: {{ car.majitel }}</p>
+            <a href="{% url 'delete_car' car.id %}" class="btn btn-danger btn-sm">Zmazať</a>
+        </div>
+    </div>
+{% endfor %}
+
+<a href="{% url 'add_car' %}" class="btn btn-success mt-3">Pridať auto</a>
+{% endblock %}

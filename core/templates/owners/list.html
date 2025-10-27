@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Zoznam majiteľov</h2>
+
+{% for owner in owners %}
+    <div class="card mb-2">
+        <div class="card-body">
+            <p>{{ owner.jmeno }} {{ owner.prijmeni }} – {{ owner.email }}</p>
+            <a href="{% url 'delete_owner' owner.id %}" class="btn btn-danger btn-sm">Zmazať</a>
+        </div>
+    </div>
+{% endfor %}
+
+<a href="{% url 'add_owner' %}" class="btn btn-success mt-3">Pridať majiteľa</a>
+{% endblock %}

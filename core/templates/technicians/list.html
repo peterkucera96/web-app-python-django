@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Zoznam technikov</h2>
+<ul class="list-group">
+    {% for technician in technicians %}
+        <li class="list-group-item">
+            {{ technician.jmeno }} {{ technician.prijmeni }} – {{ technician.specializace }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
